@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Relembrando
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] nome = new string [5];
+            int[] idad = new int[5];
+
+            for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Insira o nome do {0}º participante.", i + 1);
+                nome[i] = Console.ReadLine();
+
+                Console.WriteLine("Agora a idade dele.");
+                idad[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+            }
+
+            Console.WriteLine("De qual participante você quer saber a idade?");
+
+           for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(i + 1 + "º " + nome[i]);
+            }
+            int x;
+            x = Convert.ToInt32(Console.ReadLine());
+
+            switch (x)
+            {
+                case 1:
+                    Console.WriteLine("O " + nome[0] + " tem " + idad[0] + " anos.");
+                    break;
+                case 2:
+                    Console.WriteLine("O {0} tem {1} anos.", nome[1], idad[1]);
+                    break;
+                case 3:
+                    Console.WriteLine("O {0} tem {1} anos.", nome[2], idad[2]);
+                    break;
+                case 4:
+                    Console.WriteLine("O {0} tem {1} anos.", nome[3], idad[3]);
+                    break;
+                case 5:
+                    Console.WriteLine("O {0} tem {1} anos.", nome[4], idad[4]);
+                    break;
+
+            }        
+                Console.ReadKey();
+        }
+    }
+}
