@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+
+namespace Relembrando
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] x = new string[5];
+            int[] y = new int[5];
+            string z;
+            int aa = 0;
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Digite o nome de 5 alunos!\n(aperte qualquer tecla para prosseguir)");
+            Console.ReadKey();
+            Console.Clear();
+
+            for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Insira o {0}º nome.", i + 1);
+                x[i] = Console.ReadLine();
+                x[i] = x[i].ToLower();
+                Console.WriteLine("Registrado!");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            a:
+            Console.WriteLine("Qual aluno deseja registrar a idade?");
+            for (int i = 0; i < 5; i++)
+            {
+                if (y[i] != 0)
+                {
+                    Console.Write(y[i] + " ");
+                }
+                Console.WriteLine(x[i]);                
+            }
+            z = Console.ReadLine();
+            z = z.ToLower();
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (z == x[i])
+                {
+                    Console.WriteLine("Qual a idade dele?");
+                    y[i] = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Certo! Registrado!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    goto f;
+                }
+            }
+                                               
+            Console.WriteLine("Não achei ninguém com esse nome... Tente novamente.");
+            Console.ReadKey();
+            Console.Clear();
+            goto a;
+
+            f:
+        
+            for(int i = 0; i< 5; i++)
+            {
+                if (y[i] != 0)
+                {
+                    Console.Write(y[i] + " ");
+                }
+
+                Console.WriteLine(x[i]);                               
+            }
+
+            for(int i = 0; i < 5; i++)
+            {
+                if (y[i] != 0)
+                {
+                    aa++;
+                }
+            }
+
+            if(aa == 15)
+            {
+                Console.WriteLine("Todos os alunos já têm idade!");                
+                goto end;
+            }
+
+            Console.WriteLine("\nDeseja registrar mais alguma idade?");
+            string id;
+            id = Console.ReadLine();
+            id = id.ToLower();
+
+            if(id == "nao")
+            {
+                Console.WriteLine("Ok! Até logo!");
+            } else if(id == "não")
+            {
+                Console.WriteLine("Ok! Até logo!");
+            } else if(id == "sim")
+            {
+                Console.WriteLine("Tudo bem. Você será redirecionado.");
+                Console.ReadKey();
+                Console.Clear();
+                goto a;
+            }
+
+            
+
+            end:
+
+            Console.ReadKey();
+        }
+    }
+}
